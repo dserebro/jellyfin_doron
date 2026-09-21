@@ -1,4 +1,4 @@
-namespace Emby.Naming.ExternalFiles
+namespace Jellyfin.Naming.ExternalFiles
 {
     /// <summary>
     /// Class holding information about external files.

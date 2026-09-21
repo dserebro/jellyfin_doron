@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Emby.Naming.AudioBook
+namespace Jellyfin.Naming.AudioBook
 {
     /// <summary>
     /// Represents a complete video, including all parts and subtitles.

@@ -1,9 +1,9 @@
 using System;
 using System.IO;
-using Emby.Naming.Common;
 using Jellyfin.Extensions;
+using Jellyfin.Naming.Common;
 
-namespace Emby.Naming.Video
+namespace Jellyfin.Naming.Video
 {
     /// <summary>
     /// Resolve if file is stub (.disc).

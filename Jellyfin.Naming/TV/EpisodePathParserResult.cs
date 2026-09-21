@@ -1,4 +1,4 @@
-namespace Emby.Naming.TV
+namespace Jellyfin.Naming.TV
 {
     /// <summary>
     /// Holder object for <see cref="EpisodePathParser"/> result.

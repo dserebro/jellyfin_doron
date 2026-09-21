@@ -1,4 +1,4 @@
-namespace Emby.Naming.Video
+namespace Jellyfin.Naming.Video
 {
     /// <summary>
     /// Helper object to return data from <see cref="Format3DParser"/>.

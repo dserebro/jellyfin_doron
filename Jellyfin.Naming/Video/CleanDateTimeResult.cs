@@ -1,6 +1,6 @@
 #pragma warning disable CA1815
 
-namespace Emby.Naming.Video
+namespace Jellyfin.Naming.Video
 {
     /// <summary>
     /// Holder structure for name and year.

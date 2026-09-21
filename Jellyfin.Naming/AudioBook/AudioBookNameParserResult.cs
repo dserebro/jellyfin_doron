@@ -1,6 +1,6 @@
 #pragma warning disable CA1815
 
-namespace Emby.Naming.AudioBook
+namespace Jellyfin.Naming.AudioBook
 {
     /// <summary>
     /// Data object used to pass result of name and year parsing.

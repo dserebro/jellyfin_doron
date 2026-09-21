@@ -1,4 +1,4 @@
-namespace Emby.Naming.Book
+namespace Jellyfin.Naming.Book
 {
     /// <summary>
     /// Data object used to pass metadata parsed from a book filename.

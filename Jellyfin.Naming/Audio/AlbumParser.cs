@@ -2,10 +2,10 @@ using System;
 using System.Globalization;
 using System.IO;
 using System.Text.RegularExpressions;
-using Emby.Naming.Common;
 using Jellyfin.Extensions;
+using Jellyfin.Naming.Common;
 
-namespace Emby.Naming.Audio
+namespace Jellyfin.Naming.Audio
 {
     /// <summary>
     /// Helper class to determine if Album is multipart.

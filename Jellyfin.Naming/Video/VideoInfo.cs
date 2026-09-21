@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using MediaBrowser.Model.Entities;
 
-namespace Emby.Naming.Video
+namespace Jellyfin.Naming.Video
 {
     /// <summary>
     /// Represents a complete video, including all parts and subtitles.

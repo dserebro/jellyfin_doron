@@ -1,4 +1,4 @@
-namespace Emby.Naming.Video
+namespace Jellyfin.Naming.Video
 {
     /// <summary>
     /// Data holder class for 3D format rule.

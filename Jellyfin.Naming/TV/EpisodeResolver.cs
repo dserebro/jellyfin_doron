@@ -1,10 +1,10 @@
 using System;
 using System.IO;
-using Emby.Naming.Common;
-using Emby.Naming.Video;
 using Jellyfin.Extensions;
+using Jellyfin.Naming.Common;
+using Jellyfin.Naming.Video;
 
-namespace Emby.Naming.TV
+namespace Jellyfin.Naming.TV
 {
     /// <summary>
     /// Used to resolve information about episode from path.

@@ -1,9 +1,9 @@
 using System.Globalization;
 using System.IO;
 using System.Text.RegularExpressions;
-using Emby.Naming.Common;
+using Jellyfin.Naming.Common;
 
-namespace Emby.Naming.AudioBook
+namespace Jellyfin.Naming.AudioBook
 {
     /// <summary>
     /// Parser class to extract part and/or chapter number from audiobook filename.

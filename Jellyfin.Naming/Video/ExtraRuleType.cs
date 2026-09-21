@@ -1,4 +1,4 @@
-namespace Emby.Naming.Video
+namespace Jellyfin.Naming.Video
 {
     /// <summary>
     /// Extra rules type to determine against what <see cref="ExtraRule.Token"/> should be matched.

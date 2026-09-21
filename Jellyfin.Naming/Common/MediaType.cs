@@ -1,4 +1,4 @@
-namespace Emby.Naming.Common
+namespace Jellyfin.Naming.Common
 {
     /// <summary>
     /// Type of audiovisual media.

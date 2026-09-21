@@ -1,4 +1,4 @@
-namespace Emby.Naming.Video
+namespace Jellyfin.Naming.Video
 {
     /// <summary>
     /// Data class holding information about Stub type rule.

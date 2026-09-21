@@ -1,7 +1,7 @@
 using System;
 using System.Text.RegularExpressions;
 
-namespace Emby.Naming.Book
+namespace Jellyfin.Naming.Book
 {
     /// <summary>
     /// Helper class to retrieve basic metadata from a book filename.

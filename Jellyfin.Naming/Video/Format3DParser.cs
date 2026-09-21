@@ -1,7 +1,7 @@
 using System;
-using Emby.Naming.Common;
+using Jellyfin.Naming.Common;
 
-namespace Emby.Naming.Video
+namespace Jellyfin.Naming.Video
 {
     /// <summary>
     /// Parse 3D format related flags.

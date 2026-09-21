@@ -1,4 +1,4 @@
-namespace Emby.Naming.TV
+namespace Jellyfin.Naming.TV
 {
     /// <summary>
     /// Data object to pass result of <see cref="SeasonPathParser"/>.

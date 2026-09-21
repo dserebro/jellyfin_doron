@@ -2,7 +2,7 @@ using System;
 using System.Linq;
 using MediaBrowser.Model.Entities;
 
-namespace Emby.Naming.TV;
+namespace Jellyfin.Naming.TV;
 
 /// <summary>
 /// Helper class for TV metadata parsing.

@@ -1,6 +1,6 @@
-using Emby.Naming.Common;
+using Jellyfin.Naming.Common;
 
-namespace Emby.Naming.TV
+namespace Jellyfin.Naming.TV
 {
     /// <summary>
     /// Used to parse information about series from paths containing more information that only the series name.

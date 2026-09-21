@@ -1,10 +1,10 @@
 using System;
 using System.IO;
 using System.Text.RegularExpressions;
-using Emby.Naming.Audio;
-using Emby.Naming.Common;
+using Jellyfin.Naming.Audio;
+using Jellyfin.Naming.Common;
 
-namespace Emby.Naming.Video
+namespace Jellyfin.Naming.Video
 {
     /// <summary>
     /// Resolve if file is extra for video.

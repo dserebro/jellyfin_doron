@@ -1,7 +1,7 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Text.RegularExpressions;
 
-namespace Emby.Naming.Video;
+namespace Jellyfin.Naming.Video;
 
 /// <summary>
 /// Regex based rule for file stacking (eg. disc1, disc2).

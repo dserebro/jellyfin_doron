@@ -1,7 +1,7 @@
 using System;
 using System.Text.RegularExpressions;
 
-namespace Emby.Naming.Common
+namespace Jellyfin.Naming.Common
 {
     /// <summary>
     /// Regular expressions for parsing TV Episodes.

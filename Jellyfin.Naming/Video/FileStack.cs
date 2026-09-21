@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using Jellyfin.Extensions;
 
-namespace Emby.Naming.Video
+namespace Jellyfin.Naming.Video
 {
     /// <summary>
     /// Object holding list of files paths with additional information.

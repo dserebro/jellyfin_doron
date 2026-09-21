@@ -1,9 +1,9 @@
 using System;
 using System.IO;
-using Emby.Naming.Common;
 using Jellyfin.Extensions;
+using Jellyfin.Naming.Common;
 
-namespace Emby.Naming.Audio
+namespace Jellyfin.Naming.Audio
 {
     /// <summary>
     /// Static helper class to determine if file at path is audio file.

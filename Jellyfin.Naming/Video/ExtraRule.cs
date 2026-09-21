@@ -1,7 +1,7 @@
 using MediaBrowser.Model.Entities;
-using MediaType = Emby.Naming.Common.MediaType;
+using MediaType = Jellyfin.Naming.Common.MediaType;
 
-namespace Emby.Naming.Video
+namespace Jellyfin.Naming.Video
 {
     /// <summary>
     /// A rule used to match a file path with an <see cref="MediaBrowser.Model.Entities.ExtraType"/>.

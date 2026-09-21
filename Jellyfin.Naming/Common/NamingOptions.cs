@@ -4,12 +4,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
-using Emby.Naming.Video;
+using Jellyfin.Naming.Video;
 using MediaBrowser.Model.Entities;
 
 // ReSharper disable StringLiteralTypo
 
-namespace Emby.Naming.Common
+namespace Jellyfin.Naming.Common
 {
     /// <summary>
     /// Big ugly class containing lot of different naming options that should be split and injected instead of passes everywhere.

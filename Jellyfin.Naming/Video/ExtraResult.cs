@@ -1,6 +1,6 @@
 using MediaBrowser.Model.Entities;
 
-namespace Emby.Naming.Video
+namespace Jellyfin.Naming.Video
 {
     /// <summary>
     /// Holder object for passing results from ExtraResolver.

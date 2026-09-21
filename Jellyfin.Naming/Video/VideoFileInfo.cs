@@ -1,7 +1,7 @@
 using System;
 using MediaBrowser.Model.Entities;
 
-namespace Emby.Naming.Video
+namespace Jellyfin.Naming.Video
 {
     /// <summary>
     /// Represents a single video file.

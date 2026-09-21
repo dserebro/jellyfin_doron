@@ -2,11 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using Emby.Naming.Common;
-using Emby.Naming.Video;
+using Jellyfin.Naming.Common;
+using Jellyfin.Naming.Video;
 using MediaBrowser.Model.IO;
 
-namespace Emby.Naming.AudioBook
+namespace Jellyfin.Naming.AudioBook
 {
     /// <summary>
     /// Class used to resolve Name, Year, alternative files and extras from stack of files.

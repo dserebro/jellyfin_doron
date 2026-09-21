@@ -1,9 +1,9 @@
 using System;
 using System.IO;
-using Emby.Naming.Common;
 using Jellyfin.Extensions;
+using Jellyfin.Naming.Common;
 
-namespace Emby.Naming.AudioBook
+namespace Jellyfin.Naming.AudioBook
 {
     /// <summary>
     /// Resolve specifics (path, container, partNumber, chapterNumber) about audiobook file.
