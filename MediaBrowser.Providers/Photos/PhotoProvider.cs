@@ -16,7 +16,7 @@ using TagLib.IFD;
 using TagLib.IFD.Entries;
 using TagLib.IFD.Tags;
 
-namespace Emby.Photos;
+namespace MediaBrowser.Providers.Photos;
 
 /// <summary>
 /// Metadata provider for photos.
