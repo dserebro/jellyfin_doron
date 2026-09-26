@@ -10,7 +10,7 @@ using MediaBrowser.Model.Entities;
 using MediaBrowser.Model.Session;
 using Microsoft.Extensions.Hosting;
 
-namespace Emby.Server.Implementations.EntryPoints
+namespace Jellyfin.Server.Implementations.EntryPoints
 {
     /// <summary>
     /// <see cref="IHostedService"/> responsible for notifying users when associated item data is updated.
