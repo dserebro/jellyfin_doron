@@ -16,7 +16,7 @@ using MediaBrowser.Model.Entities;
 using MediaBrowser.Model.Globalization;
 using Microsoft.Extensions.Logging;
 
-namespace Emby.Server.Implementations.Localization
+namespace Jellyfin.Server.Implementations.Localization
 {
     /// <summary>
     /// Class LocalizationManager.
@@ -24,10 +24,10 @@ namespace Emby.Server.Implementations.Localization
     public class LocalizationManager : ILocalizationManager
     {
         private const string DefaultCulture = "en-US";
-        private const string RatingsPath = "Emby.Server.Implementations.Localization.Ratings.";
-        private const string CulturesPath = "Emby.Server.Implementations.Localization.iso6392.txt";
-        private const string CountriesPath = "Emby.Server.Implementations.Localization.countries.json";
-        private const string CoreResourcePrefix = "Emby.Server.Implementations.Localization.Core.";
+        private const string RatingsPath = "Jellyfin.Server.Implementations.Localization.Ratings.";
+        private const string CulturesPath = "Jellyfin.Server.Implementations.Localization.iso6392.txt";
+        private const string CountriesPath = "Jellyfin.Server.Implementations.Localization.countries.json";
+        private const string CoreResourcePrefix = "Jellyfin.Server.Implementations.Localization.Core.";
         private static readonly Assembly _assembly = typeof(LocalizationManager).Assembly;
         private static readonly string[] _unratedValues = ["n/a", "unrated", "not rated", "nr"];
 

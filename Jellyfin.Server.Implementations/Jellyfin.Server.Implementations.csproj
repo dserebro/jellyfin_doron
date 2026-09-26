@@ -48,4 +48,11 @@
     <ProjectReference Include="..\src\Jellyfin.Database\Jellyfin.Database.Providers.Sqlite\Jellyfin.Database.Providers.Sqlite.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <EmbeddedResource Include="Localization\iso6392.txt" />
+    <EmbeddedResource Include="Localization\countries.json" />
+    <EmbeddedResource Include="Localization\Core\*.json" />
+    <EmbeddedResource Include="Localization\Ratings\*.json" />
+  </ItemGroup>
+
 </Project>
