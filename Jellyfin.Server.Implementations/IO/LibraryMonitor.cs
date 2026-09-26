@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-using Emby.Server.Implementations.Library;
+using Jellyfin.Server.Implementations.Library;
 using MediaBrowser.Controller.Configuration;
 using MediaBrowser.Controller.Entities;
 using MediaBrowser.Controller.Library;
@@ -12,7 +12,7 @@ using MediaBrowser.Model.IO;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace Emby.Server.Implementations.IO
+namespace Jellyfin.Server.Implementations.IO
 {
     /// <inheritdoc cref="ILibraryMonitor" />
     public sealed class LibraryMonitor : ILibraryMonitor, IDisposable

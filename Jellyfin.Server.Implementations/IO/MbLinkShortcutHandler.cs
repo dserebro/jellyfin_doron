@@ -4,7 +4,7 @@ using System;
 using System.IO;
 using MediaBrowser.Model.IO;
 
-namespace Emby.Server.Implementations.IO
+namespace Jellyfin.Server.Implementations.IO
 {
     public class MbLinkShortcutHandler : IShortcutHandler
     {

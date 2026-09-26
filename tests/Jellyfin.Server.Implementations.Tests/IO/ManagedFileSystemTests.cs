@@ -4,7 +4,7 @@ using System.IO;
 using System.Runtime.InteropServices;
 using AutoFixture;
 using AutoFixture.AutoMoq;
-using Emby.Server.Implementations.IO;
+using Jellyfin.Server.Implementations.IO;
 using Jellyfin.Extensions;
 using Xunit;
 

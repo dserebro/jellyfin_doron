@@ -10,7 +10,7 @@ using MediaBrowser.Controller.Entities;
 using MediaBrowser.Controller.Library;
 using Microsoft.Extensions.Logging;
 
-namespace Emby.Server.Implementations.IO
+namespace Jellyfin.Server.Implementations.IO
 {
     public sealed class FileRefresher : IDisposable
     {

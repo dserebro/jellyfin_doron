@@ -1,7 +1,7 @@
 using System;
 using DotNet.Globbing;
 
-namespace Emby.Server.Implementations.Library
+namespace Jellyfin.Server.Implementations.Library
 {
     /// <summary>
     /// Glob patterns for files to ignore.

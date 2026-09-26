@@ -10,7 +10,7 @@ using MediaBrowser.Controller.IO;
 using MediaBrowser.Model.IO;
 using Microsoft.Extensions.Logging;
 
-namespace Emby.Server.Implementations.IO
+namespace Jellyfin.Server.Implementations.IO
 {
     /// <summary>
     /// Class ManagedFileSystem.

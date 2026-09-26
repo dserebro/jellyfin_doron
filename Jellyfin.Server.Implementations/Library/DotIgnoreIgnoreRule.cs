@@ -8,7 +8,7 @@ using MediaBrowser.Controller.IO;
 using MediaBrowser.Controller.Resolvers;
 using MediaBrowser.Model.IO;
 
-namespace Emby.Server.Implementations.Library;
+namespace Jellyfin.Server.Implementations.Library;
 
 /// <summary>
 /// Resolver rule class for ignoring files via .ignore.
