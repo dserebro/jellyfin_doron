@@ -2,7 +2,7 @@ using System;
 using System.Collections.Concurrent;
 using System.Linq;
 
-namespace Emby.Server.Implementations.Data
+namespace Jellyfin.Server.Implementations.Data
 {
     /// <summary>
     /// Class TypeMapper.

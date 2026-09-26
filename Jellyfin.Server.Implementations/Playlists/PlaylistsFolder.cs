@@ -10,7 +10,7 @@ using MediaBrowser.Controller.Entities;
 using MediaBrowser.Controller.Playlists;
 using MediaBrowser.Model.Querying;
 
-namespace Emby.Server.Implementations.Playlists
+namespace Jellyfin.Server.Implementations.Playlists
 {
     [RequiresSourceSerialisation]
     public class PlaylistsFolder : BasePluginFolder

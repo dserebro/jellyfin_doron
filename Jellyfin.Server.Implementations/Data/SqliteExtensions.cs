@@ -6,7 +6,7 @@ using System.Data;
 using System.Globalization;
 using Microsoft.Data.Sqlite;
 
-namespace Emby.Server.Implementations.Data
+namespace Jellyfin.Server.Implementations.Data
 {
     public static class SqliteExtensions
     {
