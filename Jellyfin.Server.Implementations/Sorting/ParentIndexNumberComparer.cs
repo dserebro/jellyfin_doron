@@ -4,18 +4,18 @@ using MediaBrowser.Controller.Entities;
 using MediaBrowser.Controller.Sorting;
 using MediaBrowser.Model.Querying;
 
-namespace Emby.Server.Implementations.Sorting
+namespace Jellyfin.Server.Implementations.Sorting
 {
     /// <summary>
-    /// Class DateCreatedComparer.
+    /// Class ParentIndexNumberComparer.
     /// </summary>
-    public class DateCreatedComparer : IBaseItemComparer
+    public class ParentIndexNumberComparer : IBaseItemComparer
     {
         /// <summary>
         /// Gets the name.
         /// </summary>
         /// <value>The name.</value>
-        public ItemSortBy Type => ItemSortBy.DateCreated;
+        public ItemSortBy Type => ItemSortBy.ParentIndexNumber;
 
         /// <summary>
         /// Compares the specified x.
@@ -29,7 +29,22 @@ namespace Emby.Server.Implementations.Sorting
 
             ArgumentNullException.ThrowIfNull(y);
 
-            return DateTime.Compare(x.DateCreated, y.DateCreated);
+            if (!x.ParentIndexNumber.HasValue && !y.ParentIndexNumber.HasValue)
+            {
+                return 0;
+            }
+
+            if (!x.ParentIndexNumber.HasValue)
+            {
+                return -1;
+            }
+
+            if (!y.ParentIndexNumber.HasValue)
+            {
+                return 1;
+            }
+
+            return x.ParentIndexNumber.Value.CompareTo(y.ParentIndexNumber.Value);
         }
     }
 }

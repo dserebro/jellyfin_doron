@@ -1,21 +1,19 @@
-using System;
+#pragma warning disable CS1591
+
 using Jellyfin.Data.Enums;
 using MediaBrowser.Controller.Entities;
 using MediaBrowser.Controller.Sorting;
 using MediaBrowser.Model.Querying;
 
-namespace Emby.Server.Implementations.Sorting
+namespace Jellyfin.Server.Implementations.Sorting
 {
-    /// <summary>
-    /// Class RuntimeComparer.
-    /// </summary>
-    public class RuntimeComparer : IBaseItemComparer
+    public class IsFolderComparer : IBaseItemComparer
     {
         /// <summary>
         /// Gets the name.
         /// </summary>
         /// <value>The name.</value>
-        public ItemSortBy Type => ItemSortBy.Runtime;
+        public ItemSortBy Type => ItemSortBy.IsFolder;
 
         /// <summary>
         /// Compares the specified x.
@@ -25,10 +23,17 @@ namespace Emby.Server.Implementations.Sorting
         /// <returns>System.Int32.</returns>
         public int Compare(BaseItem? x, BaseItem? y)
         {
-            ArgumentNullException.ThrowIfNull(x);
-            ArgumentNullException.ThrowIfNull(y);
+            return GetValue(x).CompareTo(GetValue(y));
+        }
 
-            return (x.RunTimeTicks ?? 0).CompareTo(y.RunTimeTicks ?? 0);
+        /// <summary>
+        /// Gets the value.
+        /// </summary>
+        /// <param name="x">The x.</param>
+        /// <returns>System.String.</returns>
+        private static int GetValue(BaseItem? x)
+        {
+            return x?.IsFolder ?? true ? 0 : 1;
         }
     }
 }

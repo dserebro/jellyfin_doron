@@ -1,20 +1,21 @@
+using System;
 using Jellyfin.Data.Enums;
 using MediaBrowser.Controller.Entities;
 using MediaBrowser.Controller.Sorting;
 using MediaBrowser.Model.Querying;
 
-namespace Emby.Server.Implementations.Sorting
+namespace Jellyfin.Server.Implementations.Sorting
 {
     /// <summary>
-    /// Class CriticRatingComparer.
+    /// Class SortNameComparer.
     /// </summary>
-    public class CriticRatingComparer : IBaseItemComparer
+    public class SortNameComparer : IBaseItemComparer
     {
         /// <summary>
         /// Gets the name.
         /// </summary>
         /// <value>The name.</value>
-        public ItemSortBy Type => ItemSortBy.CriticRating;
+        public ItemSortBy Type => ItemSortBy.SortName;
 
         /// <summary>
         /// Compares the specified x.
@@ -24,12 +25,10 @@ namespace Emby.Server.Implementations.Sorting
         /// <returns>System.Int32.</returns>
         public int Compare(BaseItem? x, BaseItem? y)
         {
-            return GetValue(x).CompareTo(GetValue(y));
-        }
+            ArgumentNullException.ThrowIfNull(x);
+            ArgumentNullException.ThrowIfNull(y);
 
-        private static float GetValue(BaseItem? x)
-        {
-            return x?.CriticRating ?? 0;
+            return string.Compare(x.SortName, y.SortName, StringComparison.OrdinalIgnoreCase);
         }
     }
 }

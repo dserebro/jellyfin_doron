@@ -4,18 +4,18 @@ using MediaBrowser.Controller.Entities;
 using MediaBrowser.Controller.Sorting;
 using MediaBrowser.Model.Querying;
 
-namespace Emby.Server.Implementations.Sorting
+namespace Jellyfin.Server.Implementations.Sorting
 {
     /// <summary>
-    /// Class RandomComparer.
+    /// Class NameComparer.
     /// </summary>
-    public class RandomComparer : IBaseItemComparer
+    public class NameComparer : IBaseItemComparer
     {
         /// <summary>
         /// Gets the name.
         /// </summary>
         /// <value>The name.</value>
-        public ItemSortBy Type => ItemSortBy.Random;
+        public ItemSortBy Type => ItemSortBy.Name;
 
         /// <summary>
         /// Compares the specified x.
@@ -25,7 +25,11 @@ namespace Emby.Server.Implementations.Sorting
         /// <returns>System.Int32.</returns>
         public int Compare(BaseItem? x, BaseItem? y)
         {
-            return Guid.NewGuid().CompareTo(Guid.NewGuid());
+            ArgumentNullException.ThrowIfNull(x);
+
+            ArgumentNullException.ThrowIfNull(y);
+
+            return string.Compare(x.Name, y.Name, StringComparison.OrdinalIgnoreCase);
         }
     }
 }

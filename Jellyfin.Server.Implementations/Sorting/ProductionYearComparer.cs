@@ -1,21 +1,20 @@
-using System;
 using Jellyfin.Data.Enums;
 using MediaBrowser.Controller.Entities;
 using MediaBrowser.Controller.Sorting;
 using MediaBrowser.Model.Querying;
 
-namespace Emby.Server.Implementations.Sorting
+namespace Jellyfin.Server.Implementations.Sorting
 {
     /// <summary>
-    /// Class PremiereDateComparer.
+    /// Class ProductionYearComparer.
     /// </summary>
-    public class PremiereDateComparer : IBaseItemComparer
+    public class ProductionYearComparer : IBaseItemComparer
     {
         /// <summary>
         /// Gets the name.
         /// </summary>
         /// <value>The name.</value>
-        public ItemSortBy Type => ItemSortBy.PremiereDate;
+        public ItemSortBy Type => ItemSortBy.ProductionYear;
 
         /// <summary>
         /// Compares the specified x.
@@ -25,7 +24,7 @@ namespace Emby.Server.Implementations.Sorting
         /// <returns>System.Int32.</returns>
         public int Compare(BaseItem? x, BaseItem? y)
         {
-            return GetDate(x).CompareTo(GetDate(y));
+            return GetValue(x).CompareTo(GetValue(y));
         }
 
         /// <summary>
@@ -33,31 +32,24 @@ namespace Emby.Server.Implementations.Sorting
         /// </summary>
         /// <param name="x">The x.</param>
         /// <returns>DateTime.</returns>
-        private static DateTime GetDate(BaseItem? x)
+        private static int GetValue(BaseItem? x)
         {
             if (x is null)
             {
-                return DateTime.MinValue;
-            }
-
-            if (x.PremiereDate.HasValue)
-            {
-                return x.PremiereDate.Value;
+                return 0;
             }
 
             if (x.ProductionYear.HasValue)
             {
-                try
-                {
-                    return new DateTime(x.ProductionYear.Value, 1, 1, 0, 0, 0, DateTimeKind.Utc);
-                }
-                catch (ArgumentOutOfRangeException)
-                {
-                    // Don't blow up if the item has a bad ProductionYear, just return MinValue
-                }
+                return x.ProductionYear.Value;
             }
 
-            return DateTime.MinValue;
+            if (x.PremiereDate.HasValue)
+            {
+                return x.PremiereDate.Value.Year;
+            }
+
+            return 0;
         }
     }
 }

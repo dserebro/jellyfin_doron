@@ -5,7 +5,7 @@ using MediaBrowser.Controller.Sorting;
 using MediaBrowser.Model.Entities;
 using MediaBrowser.Model.Globalization;
 
-namespace Emby.Server.Implementations.Sorting;
+namespace Jellyfin.Server.Implementations.Sorting;
 
 /// <summary>
 /// Class providing comparison for official ratings.

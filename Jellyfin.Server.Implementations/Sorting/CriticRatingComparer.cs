@@ -1,20 +1,20 @@
-#pragma warning disable CS1591
-
-using System;
 using Jellyfin.Data.Enums;
 using MediaBrowser.Controller.Entities;
 using MediaBrowser.Controller.Sorting;
 using MediaBrowser.Model.Querying;
 
-namespace Emby.Server.Implementations.Sorting
+namespace Jellyfin.Server.Implementations.Sorting
 {
-    public class SeriesSortNameComparer : IBaseItemComparer
+    /// <summary>
+    /// Class CriticRatingComparer.
+    /// </summary>
+    public class CriticRatingComparer : IBaseItemComparer
     {
         /// <summary>
         /// Gets the name.
         /// </summary>
         /// <value>The name.</value>
-        public ItemSortBy Type => ItemSortBy.SeriesSortName;
+        public ItemSortBy Type => ItemSortBy.CriticRating;
 
         /// <summary>
         /// Compares the specified x.
@@ -24,13 +24,12 @@ namespace Emby.Server.Implementations.Sorting
         /// <returns>System.Int32.</returns>
         public int Compare(BaseItem? x, BaseItem? y)
         {
-            return string.Compare(GetValue(x), GetValue(y), StringComparison.OrdinalIgnoreCase);
+            return GetValue(x).CompareTo(GetValue(y));
         }
 
-        private static string? GetValue(BaseItem? item)
+        private static float GetValue(BaseItem? x)
         {
-            var hasSeries = item as IHasSeries;
-            return hasSeries?.FindSeriesSortName();
+            return x?.CriticRating ?? 0;
         }
     }
 }

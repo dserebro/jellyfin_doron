@@ -1,21 +1,20 @@
 #pragma warning disable CS1591
 
 using System;
-using System.Globalization;
 using Jellyfin.Data.Enums;
-using Jellyfin.Extensions;
 using MediaBrowser.Controller.Entities;
 using MediaBrowser.Controller.Sorting;
+using MediaBrowser.Model.Querying;
 
-namespace Emby.Server.Implementations.Sorting
+namespace Jellyfin.Server.Implementations.Sorting
 {
-    public class StudioComparer : IBaseItemComparer
+    public class CommunityRatingComparer : IBaseItemComparer
     {
         /// <summary>
         /// Gets the name.
         /// </summary>
         /// <value>The name.</value>
-        public ItemSortBy Type => ItemSortBy.Studio;
+        public ItemSortBy Type => ItemSortBy.CommunityRating;
 
         /// <summary>
         /// Compares the specified x.
@@ -26,9 +25,10 @@ namespace Emby.Server.Implementations.Sorting
         public int Compare(BaseItem? x, BaseItem? y)
         {
             ArgumentNullException.ThrowIfNull(x);
+
             ArgumentNullException.ThrowIfNull(y);
 
-            return CultureInfo.InvariantCulture.CompareInfo.Compare(x.Studios.FirstOrDefault(), y.Studios.FirstOrDefault(), CompareOptions.NumericOrdering);
+            return (x.CommunityRating ?? 0).CompareTo(y.CommunityRating ?? 0);
         }
     }
 }

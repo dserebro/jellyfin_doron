@@ -7,7 +7,7 @@ using MediaBrowser.Controller.Entities.TV;
 using MediaBrowser.Controller.Sorting;
 using MediaBrowser.Model.Querying;
 
-namespace Emby.Server.Implementations.Sorting
+namespace Jellyfin.Server.Implementations.Sorting
 {
     public class AiredEpisodeOrderComparer : IBaseItemComparer
     {

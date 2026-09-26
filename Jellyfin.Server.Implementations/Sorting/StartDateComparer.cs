@@ -1,20 +1,20 @@
+#pragma warning disable CS1591
+
+using System;
 using Jellyfin.Data.Enums;
 using MediaBrowser.Controller.Entities;
+using MediaBrowser.Controller.LiveTv;
 using MediaBrowser.Controller.Sorting;
-using MediaBrowser.Model.Querying;
 
-namespace Emby.Server.Implementations.Sorting
+namespace Jellyfin.Server.Implementations.Sorting
 {
-    /// <summary>
-    /// Class ProductionYearComparer.
-    /// </summary>
-    public class ProductionYearComparer : IBaseItemComparer
+    public class StartDateComparer : IBaseItemComparer
     {
         /// <summary>
         /// Gets the name.
         /// </summary>
         /// <value>The name.</value>
-        public ItemSortBy Type => ItemSortBy.ProductionYear;
+        public ItemSortBy Type => ItemSortBy.StartDate;
 
         /// <summary>
         /// Compares the specified x.
@@ -24,7 +24,7 @@ namespace Emby.Server.Implementations.Sorting
         /// <returns>System.Int32.</returns>
         public int Compare(BaseItem? x, BaseItem? y)
         {
-            return GetValue(x).CompareTo(GetValue(y));
+            return GetDate(x).CompareTo(GetDate(y));
         }
 
         /// <summary>
@@ -32,24 +32,14 @@ namespace Emby.Server.Implementations.Sorting
         /// </summary>
         /// <param name="x">The x.</param>
         /// <returns>DateTime.</returns>
-        private static int GetValue(BaseItem? x)
+        private static DateTime GetDate(BaseItem? x)
         {
-            if (x is null)
+            if (x is LiveTvProgram hasStartDate)
             {
-                return 0;
+                return hasStartDate.StartDate;
             }
 
-            if (x.ProductionYear.HasValue)
-            {
-                return x.ProductionYear.Value;
-            }
-
-            if (x.PremiereDate.HasValue)
-            {
-                return x.PremiereDate.Value.Year;
-            }
-
-            return 0;
+            return DateTime.MinValue;
         }
     }
 }

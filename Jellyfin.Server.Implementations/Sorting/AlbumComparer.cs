@@ -1,19 +1,22 @@
-#pragma warning disable CS1591
-
+using System;
 using Jellyfin.Data.Enums;
 using MediaBrowser.Controller.Entities;
+using MediaBrowser.Controller.Entities.Audio;
 using MediaBrowser.Controller.Sorting;
 using MediaBrowser.Model.Querying;
 
-namespace Emby.Server.Implementations.Sorting
+namespace Jellyfin.Server.Implementations.Sorting
 {
-    public class IsFolderComparer : IBaseItemComparer
+    /// <summary>
+    /// Class AlbumComparer.
+    /// </summary>
+    public class AlbumComparer : IBaseItemComparer
     {
         /// <summary>
         /// Gets the name.
         /// </summary>
         /// <value>The name.</value>
-        public ItemSortBy Type => ItemSortBy.IsFolder;
+        public ItemSortBy Type => ItemSortBy.Album;
 
         /// <summary>
         /// Compares the specified x.
@@ -23,7 +26,7 @@ namespace Emby.Server.Implementations.Sorting
         /// <returns>System.Int32.</returns>
         public int Compare(BaseItem? x, BaseItem? y)
         {
-            return GetValue(x).CompareTo(GetValue(y));
+            return string.Compare(GetValue(x), GetValue(y), StringComparison.OrdinalIgnoreCase);
         }
 
         /// <summary>
@@ -31,9 +34,9 @@ namespace Emby.Server.Implementations.Sorting
         /// </summary>
         /// <param name="x">The x.</param>
         /// <returns>System.String.</returns>
-        private static int GetValue(BaseItem? x)
+        private static string GetValue(BaseItem? x)
         {
-            return x?.IsFolder ?? true ? 0 : 1;
+            return x is Audio audio ? audio.Album : string.Empty;
         }
     }
 }

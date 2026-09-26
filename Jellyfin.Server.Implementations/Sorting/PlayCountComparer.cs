@@ -1,5 +1,3 @@
-#nullable disable
-
 using System;
 using Jellyfin.Data.Enums;
 using Jellyfin.Database.Implementations.Entities;
@@ -8,36 +6,36 @@ using MediaBrowser.Controller.Library;
 using MediaBrowser.Controller.Sorting;
 using MediaBrowser.Model.Querying;
 
-namespace Emby.Server.Implementations.Sorting
+namespace Jellyfin.Server.Implementations.Sorting
 {
     /// <summary>
-    /// Class DatePlayedComparer.
+    /// Class PlayCountComparer.
     /// </summary>
-    public class DatePlayedComparer : IUserBaseItemComparer
+    public class PlayCountComparer : IUserBaseItemComparer
     {
         /// <summary>
         /// Gets or sets the user.
         /// </summary>
         /// <value>The user.</value>
-        public User User { get; set; }
-
-        /// <summary>
-        /// Gets or sets the user manager.
-        /// </summary>
-        /// <value>The user manager.</value>
-        public IUserManager UserManager { get; set; }
-
-        /// <summary>
-        /// Gets or sets the user data manager.
-        /// </summary>
-        /// <value>The user data manager.</value>
-        public IUserDataManager UserDataManager { get; set; }
+        public User User { get; set; } = null!;
 
         /// <summary>
         /// Gets the name.
         /// </summary>
         /// <value>The name.</value>
-        public ItemSortBy Type => ItemSortBy.DatePlayed;
+        public ItemSortBy Type => ItemSortBy.PlayCount;
+
+        /// <summary>
+        /// Gets or sets the user data manager.
+        /// </summary>
+        /// <value>The user data manager.</value>
+        public IUserDataManager UserDataManager { get; set; } = null!;
+
+        /// <summary>
+        /// Gets or sets the user manager.
+        /// </summary>
+        /// <value>The user manager.</value>
+        public IUserManager UserManager { get; set; } = null!;
 
         /// <summary>
         /// Compares the specified x.
@@ -45,9 +43,12 @@ namespace Emby.Server.Implementations.Sorting
         /// <param name="x">The x.</param>
         /// <param name="y">The y.</param>
         /// <returns>System.Int32.</returns>
-        public int Compare(BaseItem x, BaseItem y)
+        public int Compare(BaseItem? x, BaseItem? y)
         {
-            return GetDate(x).CompareTo(GetDate(y));
+            ArgumentNullException.ThrowIfNull(x);
+            ArgumentNullException.ThrowIfNull(y);
+
+            return GetValue(x).CompareTo(GetValue(y));
         }
 
         /// <summary>
@@ -55,16 +56,13 @@ namespace Emby.Server.Implementations.Sorting
         /// </summary>
         /// <param name="x">The x.</param>
         /// <returns>DateTime.</returns>
-        private DateTime GetDate(BaseItem x)
+        private int GetValue(BaseItem x)
         {
+            ArgumentNullException.ThrowIfNull(User);
+
             var userdata = UserDataManager.GetUserData(User, x);
 
-            if (userdata is not null && userdata.LastPlayedDate.HasValue)
-            {
-                return userdata.LastPlayedDate.Value;
-            }
-
-            return DateTime.MinValue;
+            return userdata is null ? 0 : userdata.PlayCount;
         }
     }
 }

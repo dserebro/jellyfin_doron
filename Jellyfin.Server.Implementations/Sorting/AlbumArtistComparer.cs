@@ -5,7 +5,7 @@ using MediaBrowser.Controller.Entities.Audio;
 using MediaBrowser.Controller.Sorting;
 using MediaBrowser.Model.Querying;
 
-namespace Emby.Server.Implementations.Sorting
+namespace Jellyfin.Server.Implementations.Sorting
 {
     /// <summary>
     /// Allows comparing artists of albums. Only the first artist of each album is considered.
