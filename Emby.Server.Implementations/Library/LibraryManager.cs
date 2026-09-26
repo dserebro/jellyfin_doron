@@ -22,6 +22,7 @@ using Jellyfin.Extensions;
 using Jellyfin.Naming.Common;
 using Jellyfin.Naming.TV;
 using Jellyfin.Naming.Video;
+using Jellyfin.Server.Implementations.Library;
 using Jellyfin.Server.Implementations.Playlists;
 using Jellyfin.Server.Implementations.Sorting;
 using MediaBrowser.Common.Extensions;

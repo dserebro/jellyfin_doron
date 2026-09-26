@@ -4,8 +4,8 @@ using System.IO;
 using System.Runtime.InteropServices;
 using AutoFixture;
 using AutoFixture.AutoMoq;
-using Jellyfin.Server.Implementations.IO;
 using Jellyfin.Extensions;
+using Jellyfin.Server.Implementations.IO;
 using Xunit;
 
 namespace Jellyfin.Server.Implementations.Tests.IO;

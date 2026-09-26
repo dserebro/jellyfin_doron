@@ -2,6 +2,7 @@
 
 using System;
 using System.IO;
+using Jellyfin.Server.Implementations.Library;
 using MediaBrowser.Controller.Entities;
 using MediaBrowser.Controller.Entities.Movies;
 using MediaBrowser.Controller.Library;
