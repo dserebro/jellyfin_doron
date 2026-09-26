@@ -2,7 +2,7 @@ using System;
 using System.IO;
 using System.Xml;
 using System.Xml.Serialization;
-using Emby.Server.Implementations;
+using Jellyfin.Server.Implementations;
 using Microsoft.Extensions.Logging;
 
 namespace Jellyfin.Server.Migrations.PreStartupRoutines;

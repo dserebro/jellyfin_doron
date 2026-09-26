@@ -2,7 +2,7 @@ using System;
 using System.IO;
 using MediaBrowser.Model.Serialization;
 
-namespace Emby.Server.Implementations.AppBase
+namespace Jellyfin.Server.Implementations.AppBase
 {
     /// <summary>
     /// Class ConfigurationHelper.

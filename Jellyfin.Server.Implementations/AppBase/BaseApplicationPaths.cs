@@ -5,7 +5,7 @@ using System.Linq;
 using Jellyfin.Extensions;
 using MediaBrowser.Common.Configuration;
 
-namespace Emby.Server.Implementations.AppBase
+namespace Jellyfin.Server.Implementations.AppBase
 {
     /// <summary>
     /// Provides a base class to hold common application paths used by both the UI and Server.

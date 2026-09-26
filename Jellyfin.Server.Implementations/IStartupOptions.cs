@@ -1,4 +1,4 @@
-namespace Emby.Server.Implementations
+namespace Jellyfin.Server.Implementations
 {
     /// <summary>
     /// Specifies the contract for server startup options.

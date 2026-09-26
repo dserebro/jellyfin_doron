@@ -11,7 +11,7 @@ using MediaBrowser.Model.System;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Hosting;
 
-namespace Emby.Server.Implementations;
+namespace Jellyfin.Server.Implementations;
 
 /// <inheritdoc />
 public class SystemManager : ISystemManager

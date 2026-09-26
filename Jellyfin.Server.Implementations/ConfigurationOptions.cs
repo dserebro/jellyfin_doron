@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using static MediaBrowser.Controller.Extensions.ConfigurationExtensions;
 
-namespace Emby.Server.Implementations
+namespace Jellyfin.Server.Implementations
 {
     /// <summary>
     /// Static class containing the default configuration options for the web server.
