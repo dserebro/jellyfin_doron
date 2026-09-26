@@ -6,8 +6,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Reference Include="Emby.Server.Implementations">
-      <HintPath>Emby.Server.Implementations.dll</HintPath>
+    <Reference Include="Jellyfin.Server.Implementations">
+      <HintPath>Jellyfin.Server.Implementations.dll</HintPath>
     </Reference>
   </ItemGroup>
 

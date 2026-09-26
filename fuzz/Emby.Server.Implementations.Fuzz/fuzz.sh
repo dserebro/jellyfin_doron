@@ -2,9 +2,9 @@
 
 set -e
 
-dotnet build -c Release ../../Emby.Server.Implementations/Emby.Server.Implementations.csproj --output bin
-sharpfuzz bin/Emby.Server.Implementations.dll
-cp bin/Emby.Server.Implementations.dll .
+dotnet build -c Release ../../Jellyfin.Server.Implementations/Jellyfin.Server.Implementations.csproj --output bin
+sharpfuzz bin/Jellyfin.Server.Implementations.dll
+cp bin/Jellyfin.Server.Implementations.dll .
 
 dotnet build
 mkdir -p Findings
