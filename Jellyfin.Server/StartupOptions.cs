@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using CommandLine;
-using Emby.Server.Implementations;
 using Jellyfin.Server.Configuration;
+using Jellyfin.Server.Implementations;
 using static MediaBrowser.Controller.Extensions.ConfigurationExtensions;
 
 namespace Jellyfin.Server

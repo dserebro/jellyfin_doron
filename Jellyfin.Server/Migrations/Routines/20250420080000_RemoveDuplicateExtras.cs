@@ -2,7 +2,7 @@ using System;
 using System.Globalization;
 using System.IO;
 using System.Linq;
-using Emby.Server.Implementations.Data;
+using Jellyfin.Server.Implementations.Data;
 using MediaBrowser.Controller;
 using Microsoft.Data.Sqlite;
 using Microsoft.Extensions.Logging;

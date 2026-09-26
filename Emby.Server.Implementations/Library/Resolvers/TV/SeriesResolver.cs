@@ -9,6 +9,7 @@ using Jellyfin.Data.Enums;
 using Jellyfin.Naming.Common;
 using Jellyfin.Naming.TV;
 using Jellyfin.Naming.Video;
+using Jellyfin.Server.Implementations.Library;
 using MediaBrowser.Controller.Entities.TV;
 using MediaBrowser.Controller.Library;
 using MediaBrowser.Controller.Resolvers;

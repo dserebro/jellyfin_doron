@@ -7,6 +7,7 @@ using System.Linq;
 using Emby.Server.Implementations.Library;
 using Jellyfin.Naming.Common;
 using Jellyfin.Naming.TV;
+using Jellyfin.Server.Implementations.Library;
 using MediaBrowser.Controller.Entities.TV;
 using MediaBrowser.Controller.Library;
 using MediaBrowser.Model.Entities;

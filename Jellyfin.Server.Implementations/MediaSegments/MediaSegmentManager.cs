@@ -290,7 +290,7 @@ public class MediaSegmentManager : IMediaSegmentManager
     /// <inheritdoc/>
     public bool IsTypeSupported(BaseItem baseItem)
     {
-        return baseItem.MediaType is Data.Enums.MediaType.Video or Data.Enums.MediaType.Audio;
+        return baseItem.MediaType is Jellyfin.Data.Enums.MediaType.Video or Jellyfin.Data.Enums.MediaType.Audio;
     }
 
     /// <inheritdoc/>

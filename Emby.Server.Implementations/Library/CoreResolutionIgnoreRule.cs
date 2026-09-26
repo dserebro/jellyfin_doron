@@ -2,6 +2,7 @@ using System;
 using System.IO;
 using Jellyfin.Naming.Audio;
 using Jellyfin.Naming.Common;
+using Jellyfin.Server.Implementations.Library;
 using MediaBrowser.Controller;
 using MediaBrowser.Controller.Entities;
 using MediaBrowser.Controller.Resolvers;
