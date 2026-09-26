@@ -45,9 +45,6 @@ namespace Jellyfin.Server.Implementations.Sorting
         /// <returns>System.Int32.</returns>
         public int Compare(BaseItem? x, BaseItem? y)
         {
-            ArgumentNullException.ThrowIfNull(x);
-            ArgumentNullException.ThrowIfNull(y);
-
             return GetDate(x).CompareTo(GetDate(y));
         }
 
@@ -56,9 +53,14 @@ namespace Jellyfin.Server.Implementations.Sorting
         /// </summary>
         /// <param name="x">The x.</param>
         /// <returns>DateTime.</returns>
-        private DateTime GetDate(BaseItem x)
+        private DateTime GetDate(BaseItem? x)
         {
             ArgumentNullException.ThrowIfNull(User);
+
+            if (x is null)
+            {
+                return DateTime.MinValue;
+            }
 
             var userdata = UserDataManager.GetUserData(User, x);
 
