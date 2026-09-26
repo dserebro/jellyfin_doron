@@ -16,7 +16,6 @@ using System.Threading.Tasks;
 using Emby.Server.Implementations.Chapters;
 using Emby.Server.Implementations.Collections;
 using Emby.Server.Implementations.Dto;
-using Emby.Server.Implementations.HttpServer.Security;
 using Emby.Server.Implementations.Library;
 using Emby.Server.Implementations.Library.Search;
 using Emby.Server.Implementations.Library.SimilarItems;
@@ -43,6 +42,7 @@ using Jellyfin.Server.Implementations.Cryptography;
 using Jellyfin.Server.Implementations.Data;
 using Jellyfin.Server.Implementations.Devices;
 using Jellyfin.Server.Implementations.FullSystemBackup;
+using Jellyfin.Server.Implementations.HttpServer.Security;
 using Jellyfin.Server.Implementations.IO;
 using Jellyfin.Server.Implementations.Item;
 using Jellyfin.Server.Implementations.Library;
@@ -116,7 +116,7 @@ using Microsoft.Extensions.Logging;
 using Prometheus.DotNetRuntime;
 using static MediaBrowser.Controller.Extensions.ConfigurationExtensions;
 using IConfigurationManager = MediaBrowser.Common.Configuration.IConfigurationManager;
-using WebSocketManager = Emby.Server.Implementations.HttpServer.WebSocketManager;
+using WebSocketManager = Jellyfin.Server.Implementations.HttpServer.WebSocketManager;
 
 namespace Emby.Server.Implementations
 {

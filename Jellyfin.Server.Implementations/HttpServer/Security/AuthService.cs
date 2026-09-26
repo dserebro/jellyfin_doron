@@ -6,7 +6,7 @@ using Jellyfin.Database.Implementations.Enums;
 using MediaBrowser.Controller.Net;
 using Microsoft.AspNetCore.Http;
 
-namespace Emby.Server.Implementations.HttpServer.Security
+namespace Jellyfin.Server.Implementations.HttpServer.Security
 {
     public class AuthService : IAuthService
     {

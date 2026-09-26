@@ -1,5 +1,3 @@
-#nullable disable
-
 #pragma warning disable CS1591
 
 using System;
@@ -13,7 +11,7 @@ using MediaBrowser.Controller.Net;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 
-namespace Emby.Server.Implementations.HttpServer
+namespace Jellyfin.Server.Implementations.HttpServer
 {
     public class WebSocketManager : IWebSocketManager
     {
@@ -28,6 +26,11 @@ namespace Emby.Server.Implementations.HttpServer
             ILogger<WebSocketManager> logger,
             ILoggerFactory loggerFactory)
         {
+            ArgumentNullException.ThrowIfNull(authService);
+            ArgumentNullException.ThrowIfNull(webSocketListeners);
+            ArgumentNullException.ThrowIfNull(logger);
+            ArgumentNullException.ThrowIfNull(loggerFactory);
+
             _webSocketListeners = webSocketListeners.ToArray();
             _authService = authService;
             _logger = logger;

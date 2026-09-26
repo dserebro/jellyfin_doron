@@ -15,7 +15,7 @@ using MediaBrowser.Controller.Net.WebSocketMessages.Outbound;
 using MediaBrowser.Model.Session;
 using Microsoft.Extensions.Logging;
 
-namespace Emby.Server.Implementations.HttpServer
+namespace Jellyfin.Server.Implementations.HttpServer
 {
     /// <summary>
     /// Class WebSocketConnection.
