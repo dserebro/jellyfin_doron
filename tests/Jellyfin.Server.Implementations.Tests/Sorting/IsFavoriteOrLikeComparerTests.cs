@@ -48,8 +48,8 @@ public sealed class IsFavoriteOrLikeComparerTests : IDisposable
     public void Compare_FavoriteVsNonFavorite_FavoriteSortsFirst()
     {
         var user = CreateUser();
-        var favoriteItem = new Movie();
-        var normalItem = new Movie();
+        var favoriteItem = new Movie { Id = Guid.NewGuid() };
+        var normalItem = new Movie { Id = Guid.NewGuid() };
 
         var mockDataManager = new Mock<IUserDataManager>();
         mockDataManager

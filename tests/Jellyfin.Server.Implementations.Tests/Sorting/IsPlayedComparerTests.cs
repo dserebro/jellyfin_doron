@@ -48,8 +48,8 @@ public sealed class IsPlayedComparerTests : IDisposable
     public void Compare_PlayedVsUnplayed_PlayedSortsFirst()
     {
         var user = CreateUser();
-        var playedItem = new Movie();
-        var unplayedItem = new Movie();
+        var playedItem = new Movie { Id = Guid.NewGuid() };
+        var unplayedItem = new Movie { Id = Guid.NewGuid() };
 
         var mockDataManager = new Mock<IUserDataManager>();
         mockDataManager

@@ -51,8 +51,8 @@ public class DatePlayedComparerTests
     public void Compare_ItemWithLaterPlayDate_SortsAfter()
     {
         var user = CreateUser();
-        var itemA = new Movie();
-        var itemB = new Movie();
+        var itemA = new Movie { Id = Guid.NewGuid() };
+        var itemB = new Movie { Id = Guid.NewGuid() };
 
         var mockDataManager = new Mock<IUserDataManager>();
         mockDataManager
