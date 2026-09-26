@@ -5,7 +5,7 @@ using System.Security.Cryptography;
 using MediaBrowser.Model.Cryptography;
 using static MediaBrowser.Model.Cryptography.Constants;
 
-namespace Emby.Server.Implementations.Cryptography
+namespace Jellyfin.Server.Implementations.Cryptography
 {
     /// <summary>
     /// Class providing abstractions over cryptographic functions.

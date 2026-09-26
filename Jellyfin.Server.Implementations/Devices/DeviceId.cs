@@ -6,7 +6,7 @@ using System.Threading;
 using MediaBrowser.Common.Configuration;
 using Microsoft.Extensions.Logging;
 
-namespace Emby.Server.Implementations.Devices
+namespace Jellyfin.Server.Implementations.Devices
 {
     /// <summary>
     /// Provides the persistent unique identifier of this server installation.

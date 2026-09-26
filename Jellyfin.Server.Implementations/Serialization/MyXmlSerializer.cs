@@ -6,7 +6,7 @@ using System.Xml.Serialization;
 using MediaBrowser.Model.IO;
 using MediaBrowser.Model.Serialization;
 
-namespace Emby.Server.Implementations.Serialization
+namespace Jellyfin.Server.Implementations.Serialization
 {
     /// <summary>
     /// Provides a wrapper around third party xml serialization.
