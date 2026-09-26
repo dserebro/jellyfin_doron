@@ -53,10 +53,10 @@ public sealed class IsUnplayedComparerTests : IDisposable
 
         var mockDataManager = new Mock<IUserDataManager>();
         mockDataManager
-            .Setup(m => m.GetUserData(user, playedItem))
+            .Setup(m => m.GetUserData(It.IsAny<User>(), playedItem))
             .Returns(new UserItemData { Key = "played", Played = true });
         mockDataManager
-            .Setup(m => m.GetUserData(user, unplayedItem))
+            .Setup(m => m.GetUserData(It.IsAny<User>(), unplayedItem))
             .Returns(new UserItemData { Key = "unplayed", Played = false });
 
         BaseItem.UserDataManager = mockDataManager.Object;

@@ -56,10 +56,10 @@ public class PlayCountComparerTests
 
         var mockDataManager = new Mock<IUserDataManager>();
         mockDataManager
-            .Setup(m => m.GetUserData(user, itemA))
+            .Setup(m => m.GetUserData(It.IsAny<User>(), itemA))
             .Returns(new UserItemData { Key = "a", PlayCount = 1 });
         mockDataManager
-            .Setup(m => m.GetUserData(user, itemB))
+            .Setup(m => m.GetUserData(It.IsAny<User>(), itemB))
             .Returns(new UserItemData { Key = "b", PlayCount = 5 });
 
         var cmp = new PlayCountComparer

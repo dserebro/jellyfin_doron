@@ -56,10 +56,10 @@ public class DatePlayedComparerTests
 
         var mockDataManager = new Mock<IUserDataManager>();
         mockDataManager
-            .Setup(m => m.GetUserData(user, itemA))
+            .Setup(m => m.GetUserData(It.IsAny<User>(), itemA))
             .Returns(new UserItemData { Key = "a", LastPlayedDate = new DateTime(2024, 1, 1), Played = true });
         mockDataManager
-            .Setup(m => m.GetUserData(user, itemB))
+            .Setup(m => m.GetUserData(It.IsAny<User>(), itemB))
             .Returns(new UserItemData { Key = "b", LastPlayedDate = new DateTime(2024, 6, 1), Played = true });
 
         var cmp = new DatePlayedComparer

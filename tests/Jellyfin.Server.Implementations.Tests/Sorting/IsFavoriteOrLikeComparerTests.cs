@@ -53,10 +53,10 @@ public sealed class IsFavoriteOrLikeComparerTests : IDisposable
 
         var mockDataManager = new Mock<IUserDataManager>();
         mockDataManager
-            .Setup(m => m.GetUserData(user, favoriteItem))
+            .Setup(m => m.GetUserData(It.IsAny<User>(), favoriteItem))
             .Returns(new UserItemData { Key = "fav", IsFavorite = true });
         mockDataManager
-            .Setup(m => m.GetUserData(user, normalItem))
+            .Setup(m => m.GetUserData(It.IsAny<User>(), normalItem))
             .Returns(new UserItemData { Key = "normal", IsFavorite = false });
 
         BaseItem.UserDataManager = mockDataManager.Object;
