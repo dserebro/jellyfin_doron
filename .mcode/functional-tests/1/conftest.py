@@ -3,7 +3,6 @@
 import requests
 import pytest
 import time
-import uuid
 
 BASE_URL = "http://localhost:8096"
 AUTH_HEADER_BASE = (

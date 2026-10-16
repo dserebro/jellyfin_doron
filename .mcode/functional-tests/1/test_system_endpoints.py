@@ -5,7 +5,6 @@ after the Emby.Naming -> Jellyfin.Naming namespace migration.
 """
 
 import requests
-import pytest
 import time
 
 BASE_URL = "http://localhost:8096"

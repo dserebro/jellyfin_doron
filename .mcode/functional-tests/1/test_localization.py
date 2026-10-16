@@ -5,7 +5,6 @@ return correct data after the Emby.Naming -> Jellyfin.Naming migration.
 """
 
 import requests
-import pytest
 
 BASE_URL = "http://localhost:8096"
 
