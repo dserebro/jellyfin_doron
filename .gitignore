@@ -207,6 +207,12 @@ $RECYCLE.BIN/
 #############
 
 *.py[co]
+*.pyc
+*.pyo
+__pycache__/
+.pytest_cache/
+.venv/
+venv/
 
 # Packages
 *.egg
