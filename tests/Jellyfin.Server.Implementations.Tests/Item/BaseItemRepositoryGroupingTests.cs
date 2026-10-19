@@ -1,6 +1,6 @@
 using System;
 using System.Linq;
-using Emby.Server.Implementations.Data;
+using Emby.Server.Implementations.Library;
 using Jellyfin.Database.Implementations;
 using Jellyfin.Database.Implementations.Entities;
 using Jellyfin.Database.Implementations.Locking;

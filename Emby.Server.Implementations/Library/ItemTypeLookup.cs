@@ -11,7 +11,7 @@ using MediaBrowser.Controller.LiveTv;
 using MediaBrowser.Controller.Persistence;
 using MediaBrowser.Controller.Playlists;
 
-namespace Emby.Server.Implementations.Data;
+namespace Emby.Server.Implementations.Library;
 
 /// <inheritdoc />
 public class ItemTypeLookup : IItemTypeLookup
