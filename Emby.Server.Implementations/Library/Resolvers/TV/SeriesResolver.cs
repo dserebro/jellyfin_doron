@@ -62,7 +62,7 @@ namespace Emby.Server.Implementations.Library.Resolvers.TV
                     return null;
                 }
 
-                var seriesInfo = Naming.TV.SeriesResolver.Resolve(_namingOptions, args.Path);
+                var seriesInfo = Jellyfin.Naming.TV.SeriesResolver.Resolve(_namingOptions, args.Path);
 
                 var collectionType = args.GetCollectionType();
                 if (collectionType == CollectionType.tvshows)
@@ -142,7 +142,7 @@ namespace Emby.Server.Implementations.Library.Resolvers.TV
 
                         var namingOptions = _namingOptions;
 
-                        var episodeResolver = new Naming.TV.EpisodeResolver(namingOptions);
+                        var episodeResolver = new Jellyfin.Naming.TV.EpisodeResolver(namingOptions);
 
                         var episodeInfo = episodeResolver.Resolve(fullName, false, true, false, fillExtendedInfo: false);
                         if (episodeInfo is not null && episodeInfo.EpisodeNumber.HasValue)

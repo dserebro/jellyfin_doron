@@ -65,7 +65,7 @@ namespace Emby.Server.Implementations.Library.Resolvers.TV
 
                 if (!season.IndexNumber.HasValue || !seasonParserResult.IsSeasonFolder)
                 {
-                    var resolver = new Naming.TV.EpisodeResolver(namingOptions);
+                    var resolver = new Jellyfin.Naming.TV.EpisodeResolver(namingOptions);
 
                     var folderName = System.IO.Path.GetFileName(path);
                     var testPath = @"\\test\" + folderName;
