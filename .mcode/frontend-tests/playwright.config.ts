@@ -2,8 +2,11 @@ import { defineConfig } from "@playwright/test";
 
 export default defineConfig({
   testDir: ".",
-  timeout: 30000,
+  timeout: 60000,
   retries: 1,
+  // Limit parallelism: the Swagger UI loads a large openapi.json (~several MB).
+  // Running multiple browsers simultaneously stresses the server unnecessarily.
+  workers: 2,
   use: {
     baseURL: "http://localhost:8096",
     headless: true,
