@@ -99,3 +99,62 @@ class TestBrandingConfiguration:
         body = resp.json()
         assert isinstance(body, dict)
         assert "SplashscreenEnabled" in body
+
+
+class TestScheduledTasks:
+    """GET /ScheduledTasks - requires authentication.
+
+    Exercises the TaskManager and DI-resolved task registrations from
+    Emby.Server.Implementations. The server must resolve all IScheduledTask
+    and ILibraryPostScanTask implementations (including the restored
+    CleanDatabaseScheduledTask) without errors for the server to start
+    and this endpoint to work.
+    """
+
+    def test_scheduled_tasks_list(self, auth_headers):
+        resp = requests.get(
+            f"{BASE_URL}/ScheduledTasks",
+            headers=auth_headers,
+            timeout=10,
+        )
+        assert resp.status_code == 200
+        body = resp.json()
+        assert isinstance(body, list)
+        assert len(body) >= 15  # Server has ~19 scheduled tasks
+        # Verify task structure
+        task = body[0]
+        assert "Name" in task
+        assert "Key" in task
+        assert "State" in task
+        assert "Category" in task
+
+    def test_scheduled_tasks_has_library_scan(self, auth_headers):
+        """Verify Scan Media Library task exists - this task triggers
+        ILibraryPostScanTask implementations like CleanDatabaseScheduledTask."""
+        resp = requests.get(
+            f"{BASE_URL}/ScheduledTasks",
+            headers=auth_headers,
+            timeout=10,
+        )
+        assert resp.status_code == 200
+        body = resp.json()
+        task_keys = [t["Key"] for t in body]
+        assert "RefreshLibrary" in task_keys, "Scan Media Library task not found"
+
+    def test_scheduled_tasks_has_maintenance_tasks(self, auth_headers):
+        """Verify maintenance tasks exist - these share the Emby.Server.Implementations
+        namespace with CleanDatabaseScheduledTask."""
+        resp = requests.get(
+            f"{BASE_URL}/ScheduledTasks",
+            headers=auth_headers,
+            timeout=10,
+        )
+        assert resp.status_code == 200
+        body = resp.json()
+        categories = set(t["Category"] for t in body)
+        assert "Maintenance" in categories
+        assert "Library" in categories
+        # Maintenance tasks from Emby.Server.Implementations
+        task_keys = [t["Key"] for t in body]
+        assert "OptimizeDatabaseTask" in task_keys
+        assert "CleanActivityLog" in task_keys
