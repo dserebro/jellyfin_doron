@@ -282,3 +282,13 @@ mono_crash.*.json
 # Devcontainer temp files
 .devcontainer/devcontainer-lock.json
 dotnet/
+
+#########################
+# Python / pytest testing artifacts
+#########################
+.venv/
+venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+*.pyo
